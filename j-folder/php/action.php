@@ -150,7 +150,7 @@
 		/* Send email using sendmail function */
 		/* If you want to use sendmail - true, if you don't - false */
 		/* If you will use sendmail function - do not forget to set '$smtp' variable to 'false' */
-		$sendmail = true;
+		$sendmail = false;
 		if ($sendmail) {
 			require dirname(__FILE__)."/phpmailer/PHPMailerAutoload.php";
 			require dirname(__FILE__)."/message.php";
@@ -172,7 +172,7 @@
 		/* Send email using smtp function */
 		/* If you want to use smtp - true, if you don't - false */
 		/* If you will use smtp function - do not forget to set '$sendmail' variable to 'false' */
-		$smtp = false;
+		$smtp = true;
 		if ($smtp) {
 			require dirname(__FILE__)."/phpmailer/PHPMailerAutoload.php";
 			require dirname(__FILE__)."/message.php";
