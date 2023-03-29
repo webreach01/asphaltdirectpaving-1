@@ -11,7 +11,7 @@
 /* Your data */
 /************************************************/
 	/* Your email goes here */
-	$your_email = "stevedirectpaving@gmail.com";
+	$your_email = "jitendra.p@msp-group.co.uk";
 	// $your_email = "devtest7281@gmail.com";
 
 	/* Your name or your company name goes here */
@@ -32,7 +32,7 @@
 	$validate_time      = false;
 	$validate_preferred = false;
 	$validate_message	= false;
-	$validate_captcha	= true;
+	/*$validate_captcha	= true;*/
    $validate_newsletter	= false;
 
 	/* Select the action */
@@ -55,7 +55,7 @@
 	$preferred = (isset($_POST["preferred"]))   ? strip_tags(trim($_POST["preferred"]))		: false;
 	$newsletter	 = (isset($_POST["news_group"]))		? subscribeGroup($_POST["news_group"])		  : false;
 	$message = (isset($_POST["message"]))		? strip_tags(trim($_POST["message"]))		: false;
-	$captcha = (isset($_POST["captcha_code"]))	? strip_tags(trim($_POST["captcha_code"]))	: false;
+	/*$captcha = (isset($_POST["captcha_code"]))	? strip_tags(trim($_POST["captcha_code"]))	: false;*/
 
 	$name	 = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
 	$address = htmlspecialchars($address, ENT_QUOTES, 'UTF-8');
@@ -64,7 +64,7 @@
 	$time	 = htmlspecialchars($time, ENT_QUOTES, 'UTF-8');
 	$preferred	 = htmlspecialchars($preferred, ENT_QUOTES, 'UTF-8');
 	$message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
-	$captcha = htmlspecialchars($captcha, ENT_QUOTES, 'UTF-8');
+	/*$captcha = htmlspecialchars($captcha, ENT_QUOTES, 'UTF-8');*/
 
 	$name	 = substr($name, 0, 50);
 	$address = substr($address, 0, 60);
@@ -120,11 +120,11 @@
 	}
 	
 	/* Captcha */
-	if ($validate_captcha) {
+/*	if ($validate_captcha) {
 		if ($captcha != $_SESSION['code']) {
 			$error_text[] = "Incorrect captcha";
 		}
-	}
+	}*/
 
 	/* If validation error occurs */
 	if ($error_text) {
@@ -150,14 +150,14 @@
 		/* Send email using sendmail function */
 		/* If you want to use sendmail - true, if you don't - false */
 		/* If you will use sendmail function - do not forget to set '$smtp' variable to 'false' */
-		$sendmail = true;
+		$sendmail = false;
 		if ($sendmail) {
 			require dirname(__FILE__)."/phpmailer/PHPMailerAutoload.php";
 			require dirname(__FILE__)."/message.php";
 			$mail = new PHPMailer;
 			$mail->isSendmail();
 			$mail->IsHTML(true);
-			$mail->From = "info@asphaltdirectpaving.com";
+			$mail->From = "jitendra.p@msp-group.co.uk";
 			$mail->CharSet = "UTF-8";
 			$mail->FromName = $name;
 			$mail->Encoding = "base64";
@@ -172,18 +172,18 @@
 		/* Send email using smtp function */
 		/* If you want to use smtp - true, if you don't - false */
 		/* If you will use smtp function - do not forget to set '$sendmail' variable to 'false' */
-		$smtp = false;
+		$smtp = true;
 		if ($smtp) {
 			require dirname(__FILE__)."/phpmailer/PHPMailerAutoload.php";
 			require dirname(__FILE__)."/message.php";
 			$mail = new PHPMailer;
 			$mail->isSMTP();											// Set mailer to use SMTP
-			$mail->Host = "smtp1.example.com;smtp2.example.com";		// Specify main and backup server
+			$mail->Host       = 'smtp.ionos.co.uk'; 	// Specify main and backup server
 			$mail->SMTPAuth = true;										// Enable SMTP authentication
-			$mail->Username = "your-username";							// SMTP username
-			$mail->Password = "your-password";							// SMTP password
+			 $mail->Username   = 'jitendra.p@msp-group.co.uk'; 							// SMTP username
+			$mail->Password   = 'M$p@2022';    							// SMTP password
 			$mail->SMTPSecure = "tls";									// Enable encryption, 'ssl' also accepted
-			$mail->Port = 465;											// SMTP Port number e.g. smtp.gmail.com uses port 465
+			$mail->Port = 587;											// SMTP Port number e.g. smtp.gmail.com uses port 465
 			$mail->IsHTML(true);
 			$mail->From = $email;
 			$mail->CharSet = "UTF-8";
