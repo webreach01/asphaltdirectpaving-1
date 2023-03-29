@@ -1,7 +1,7 @@
 <?php
 	if (!isset($_SESSION)) session_start();
 	header("Content-Type: text/html; charset=utf-8");
-
+	header("Access-Control-Allow-Origin: *");
 	if (!$_POST) exit;
 
 	require dirname(__FILE__)."/validation.php";

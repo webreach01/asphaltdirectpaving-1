@@ -15,7 +15,7 @@
 	<link rel="apple-touch-icon-precomposed" sizes="180x180" href="apple-touch-180x180.png">
     
    <!-- FONTS -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic">
     
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"> 
@@ -50,7 +50,7 @@
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-88939251-1', 'auto');
   ga('send', 'pageview');
@@ -192,7 +192,7 @@
 
  <!-- form -->
 
-		<form action="j-folder/php/action.php" method="post" class="j-forms" id="j-forms" novalidate>
+		<form method="post"  enctype="multipart/form-data" action="j-folder/php/action.php" class="j-forms" id="j-forms" novalidate>
 
 			<div class="formheader">
 				<p>Contact Form</p>
@@ -278,24 +278,7 @@
 					</div>
 				</div>
 				<!-- end project time -->
-				<!-- start captcha -->
-		<!-- 		<div class="unit">
-					<label class="label">Captcha</label>
-					<div class="captcha-group">
-						<div class="input">
-							<label class="icon-right" for="code">
-								<i class="fa fa-unlock-alt"></i>
-							</label>
-							<input type="text" id="captcha_code" name="captcha_code" placeholder="solve the captcha">
-							<span class="tooltip tooltip-right-top">Enter sum of the digits</span>
-						</div>
-						<label class="captcha" for="captcha_code">
-							<img src="j-folder/php/captcha/captcha-image.php" alt="captcha" />
-						</label>
-					</div>
-				</div> -->
-				<!-- end captcha -->
-<!-- All fields with * mandatory -->
+
 				<br><br>
 
 				<!-- start response from server -->
@@ -354,7 +337,7 @@
   document.write(new Date().getFullYear());
 </script><br><br>
                                     
-                                    Website Design By: <a href="http://www.pomediagroup.com" target="_blank">Progressive Online Media Group</a></strong></p>
+                                    Website Design By: <a href="https://www.pomediagroup.com" target="_blank">Progressive Online Media Group</a></strong></p>
 								
 								</div>
 								
@@ -377,7 +360,8 @@
     
     
     <!-- jQUERY -->
-    <script src="assets/plugins/jquery/jquery-2.1.4.min.js"></script>
+<!--     <script src="assets/plugins/jquery/jquery-2.1.4.min.js"></script> -->
+	 <script src="assets/plugins/jquery/jquery-3.1.1.min.js"></script>
 	
     <!-- BOOTSTRAP JS -->
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
