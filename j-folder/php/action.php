@@ -32,7 +32,6 @@
 	$validate_time      = false;
 	$validate_preferred = false;
 	$validate_message	= false;
-	$validate_captcha	= true;
    $validate_newsletter	= false;
 
 	/* Select the action */
@@ -55,7 +54,6 @@
 	$preferred = (isset($_POST["preferred"]))   ? strip_tags(trim($_POST["preferred"]))		: false;
 	$newsletter	 = (isset($_POST["news_group"]))		? subscribeGroup($_POST["news_group"])		  : false;
 	$message = (isset($_POST["message"]))		? strip_tags(trim($_POST["message"]))		: false;
-	$captcha = (isset($_POST["captcha_code"]))	? strip_tags(trim($_POST["captcha_code"]))	: false;
 
 	$name	 = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
 	$address = htmlspecialchars($address, ENT_QUOTES, 'UTF-8');
@@ -119,12 +117,6 @@
 		}
 	}
 	
-	/* Captcha */
-	if ($validate_captcha) {
-		if ($captcha != $_SESSION['code']) {
-			$error_text[] = "Incorrect captcha";
-		}
-	}
 
 	/* If validation error occurs */
 	if ($error_text) {
